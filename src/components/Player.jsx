@@ -12,7 +12,7 @@ export default function Player() {
     <section id="player">
       <h2>Welcome {name}</h2>
       <p>
-        <input type="text" onChange={handleChange}/>
+        <input type="text" onChange={handleChange} value={inputName}/>
         <button onClick={() => setName(inputName)}>Set Name</button>
       </p>
     </section>
