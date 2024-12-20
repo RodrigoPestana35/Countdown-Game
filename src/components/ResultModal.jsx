@@ -16,7 +16,7 @@ export default function ResultModal({ remainingTime, targetTime, ref, onReset })
   });
 
   return (
-    <dialog ref={dialog} className="result-modal">
+    <dialog ref={dialog} className="result-modal" onClose={onReset}>  {/* onClose é um evento que é disparado quando o dialog é fechado */}
       {userLost && <h2>You Lost!</h2>}
       {!userLost && <h2>Your score: {score}</h2>}
       <p>
@@ -25,7 +25,7 @@ export default function ResultModal({ remainingTime, targetTime, ref, onReset })
       <p>
         You stoped the timer with <strong>{formattedRemainingTime} seconds left.</strong>
       </p>
-      <form method="dialog" onSubmit={onReset}>
+      <form method="dialog">
         <button>Close</button>
       </form>
     </dialog>
